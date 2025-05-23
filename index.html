@@ -73,10 +73,10 @@
     
 <!-- Arrow Overlay on Right Side -->
 <div class="flex justify-end">
-    <img 
-    src="https://bucket.mlcdn.com/a/3336/3336910/images/f9a6e53d5d96c280bed1aa7765c790ea8eca7746.png" 
+  <img 
+    src="https://bucket.mlcdn.com/a/3336/3336910/images/c6fcebe195ce5911985800b2867ce4ea9d58e1e8.png" 
     alt="Arrow pointing to Demo" 
-    class="absolute right-[10px] top-[calc(55%-0px)] transform -translate-y-1/2 min-w-[40px] max-w-[240px] w-full h-auto"
+    class="hidden md:block absolute right-[30px] top-[calc(50%-0px)] transform -translate-y-1/2 min-w-[40px] max-w-[240px] w-full h-auto"
   />
 </div>
     
@@ -101,16 +101,16 @@
 
   
   <!-- PRICING -->
-<h2 class="text-[48px] md:text-[58px] font-bold text-center text-white mb-10">
-  <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
-    Simple, Transparent Pricing
-  </span>
-</h2>
-    <div class="flex flex-col md:flex-row gap-8 xl:gap-12 justify-center items-center w-full max-w-5xl">
+<section id="pricing" class="w-full flex flex-col items-center px-2 -mt-2 pt-10 pb-24">
+  <h2 class="text-[48px] md:text-[58px] font-bold text-center text-white mb-10">
+    <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
+      Simple, Transparent Pricing
+    </span>
+  </h2>
 
 
       
-      
+  <div class="flex flex-col md:flex-row gap-8 xl:gap-12 justify-center items-center w-full max-w-5xl mx-auto">
       <!-- FREE PLAN -->
 <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#DF1783]/30">
   <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Free</div>        <div class="min-h-[56px]"></div>
@@ -167,14 +167,14 @@
   
 <!-- FOOTER -->
 <section class="w-full bg-[#040405]/80 backdrop-blur-md py-12 md:py-16 mt-auto border-t border-[#a0196a]/30 text-[#f1f1f1]">
-<div class="max-w-6xl mx-auto pl-8 pr-4 md:px-4 grid grid-cols-1 md:grid-cols-3 gap-10 items-start footer-section">
+<div class="max-w-6xl mx-auto pl-8 pr-4 md:px-4 grid grid-cols-1 md:grid-cols-4 gap-10 items-start footer-section">
   <div class="footer-container w-full md:col-span-3">
       <footer>
         <div class="footer-grid grid grid-cols-2 lg:grid-cols-6 gap-8">
           
           
           
-          <!-- Logo and Tagline -->
+          <!-- Column 1 - Logo and Tagline -->
           <div class="col-span-2 mb-8 lg:mb-0">
             <div class="flex items-center gap-2">
               <a href="https://www.html-lab.net/">
@@ -196,7 +196,7 @@
 
 
           
-          <!-- Menu Sections -->
+          <!-- Column 2 - Menu Sections -->
           <div>
             <h3 class="mb-4 font-bold text-white">Product</h3>
             <ul class="space-y-2 text-sm">
