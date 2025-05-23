@@ -83,7 +83,7 @@
 
 
       
-      <!-- FREE CARD -->
+      <!-- FREE PLAN -->
       <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
         <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#524d58] to-[#4339a7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Free</div>
         <div class="min-h-[56px]"></div>
@@ -100,7 +100,7 @@
       </div>
 
       
-      <!-- WEEKLY CARD -->
+      <!-- PRO PLAN -->
       <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
         <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#4339a7] to-[#24a2f7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Weekly</div>
         <div class="min-h-[56px]"></div>
@@ -117,7 +117,7 @@
       </div>
 
       
-      <!-- MONTHLY CARD -->
+      <!-- AGENCY PLAN -->
       <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
         <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#24a2f7] to-[#4339a7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Monthly</div>
         <div class="min-h-[56px]"></div>
@@ -135,47 +135,85 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="w-full bg-[#040405]/80 backdrop-blur-md py-12 md:py-16 mt-auto border-t border-[#040405]/30">
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+ <!-- FOOTER -->
+<section class="w-full bg-[#040405]/80 backdrop-blur-md py-12 md:py-16 mt-auto border-t border-[#040405]/30">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 items-start footer-section">
+    <div class="footer-container w-full md:col-span-3">
+      <footer>
+        <div class="footer-grid grid grid-cols-2 lg:grid-cols-6 gap-8">
+          <!-- Logo and Tagline -->
+          <div class="col-span-2 mb-8 lg:mb-0">
+            <div class="flex items-center gap-2">
+              <a href="https://www.shadcnblocks.com">
+                <img
+                  src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png"
+                  alt="blocks for shadcn/ui"
+                  title="Shadcnblocks.com"
+                  class="h-10"
+                />
+              </a>
+              <p class="text-xl font-semibold text-white">vibecoding Studio/</p>
+            </div>
+            <p class="mt-4 font-bold text-white">Components made easy.</p>
+          </div>
 
-      
-      <!-- LEFT: Features/Links -->
-      <div class="flex flex-col gap-2 md:items-start items-center text-zinc-300 text-sm">
-        <span class="font-bold text-white pb-2">Features</span>
-        <a href="/audio" class="hover:text-[#24a2f7]">FX Generation</a>
-        <a href="/audio/text-to-speech" class="hover:text-[#24a2f7]">Text to speech</a>
-        <a href="/audio/voice-changer" class="hover:text-[#24a2f7]">Voice changer</a>
-        <a href="/image/generation" class="hover:text-[#24a2f7]">Text to image</a>
-        <a href="/video" class="hover:text-[#24a2f7]">Text to video</a>
-      </div>
-      <!-- CENTER: Socials & Logo -->
-      <div class="flex flex-col items-center gap-2">
-        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png" alt="VibeCoding Studio Logo" class="h-8 w-auto mb-1" />
-        <div class="flex gap-6 mt-2">
-          <a href="https://www.facebook.com/share/1Bfh6FhfNQ" target="_blank" rel="noopener noreferrer">
-            <img src="https://ext.same-assets.com/4110646853/4045490586.svg" alt="Facebook" class="h-6 w-6 hover:scale-110 transition-transform" />
-          </a>
-          <a href="https://www.instagram.com/pandorraai" target="_blank" rel="noopener noreferrer">
-            <img src="https://ext.same-assets.com/4110646853/2338479571.svg" alt="Instagram" class="h-6 w-6 hover:scale-110 transition-transform" />
-          </a>
-          <a href="https://www.tiktok.com/@pandorra_ai" target="_blank" rel="noopener noreferrer">
-            <img src="https://ext.same-assets.com/4110646853/4060023943.svg" alt="Tiktok" class="h-6 w-6 hover:scale-110 transition-transform" />
-          </a>
+          <!-- Menu Sections -->
+          <div>
+            <h3 class="mb-4 font-bold text-white">Product</h3>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Marketplace</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Integrations</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-4 font-bold text-white">Company</h3>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-4 font-bold text-white">Resources</h3>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Sales</a></li>
+              <li><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-4 font-bold text-white">Social</h3>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <!-- RIGHT: Legal/Company -->
-      <div class="flex flex-col gap-2 md:items-end items-center text-zinc-400 text-sm">
-        <span class="font-bold text-white pb-2">Company</span>
-        <a href="/about" class="hover:text-white">About Us</a>
-        <a href="/pricing" class="hover:text-white">Pricing</a>
-        <a href="/affiliation" class="hover:text-white">Affiliate Program</a>
-        <a href="/privacy" class="hover:text-white">Privacy Policy</a>
-        <a href="/terms" class="hover:text-white">Terms of Service</a>
-      </div>
+
+        <!-- Footer Bottom -->
+        <div class="mt-12 border-t border-white/10 pt-6 text-sm text-white flex flex-col md:flex-row justify-between items-center">
+          <p>© 2024 Shadcnblocks.com. All rights reserved.</p>
+          <ul class="flex gap-4 mt-4 md:mt-0">
+            <li><a class="underline hover:text-primary" href="#">Terms and Conditions</a></li>
+            <li><a class="underline hover:text-primary" href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-    <div class="text-center text-xs text-zinc-500 mt-6">© <script>document.write(new Date().getFullYear())</script> VibeCoding Studio. All rights reserved.</div>
-  </footer>
+  </div>
+</section>
+         
 
   <script>
     // This script is just to make the copyright year dynamic
