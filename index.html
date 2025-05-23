@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeCoding Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#040405] font-sans flex flex-col">
+  <!-- NAVBAR -->
+  <header class="w-full flex items-center justify-between p-4 px-4 sm:px-8">
+    <span class="font-bold text-white text-lg tracking-tight flex items-center gap-2">
+      <img
+        src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png"
+        alt="VibeCoding Studio Logo"
+        class="h-7 w-7"
+        style="filter: drop-shadow(0 2px 8px #4339a7aa)"
+      />
+      VibeCoding Studio
+    </span>
+    <nav class="hidden md:flex gap-5 lg:gap-7 items-center">
+      <a class="text-gray-300 font-semibold hover:text-white transition text-sm" href="/">Home</a>
+      <a class="text-gray-300 font-semibold hover:text-white transition text-sm" href="https://bebellpartners.com/vibecoding">Affiliate</a>
+      <a class="text-gray-300 font-semibold hover:text-white transition text-sm" href="#pricing">Pricing</a>
+      <a class="text-gray-300 font-semibold hover:text-white transition text-sm" href="/token">Credits</a>
+      <button class="ml-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#4339a7] to-[#24a2f7] text-white font-bold text-xs shadow-lg border-none">
+        Start Coding Right Away!
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="w-full flex flex-col items-center px-4 gap-6 pt-12 sm:pt-24 pb-8 sm:pb-16">
+    <h1 class="text-[48px] sm:text-4xl md:text-6xl font-extrabold text-center leading-tight">
+      <span class="bg-gradient-to-r from-[#4339a7] via-[#cbbdef] to-[#24a2f7] text-transparent bg-clip-text">
+        VibeCoding Studio
+      </span>
+      <span class="text-zinc-200"> at the <br class="hidden md:block" />service of your creativity</span>
+    </h1>
+    <div class="w-full max-w-md mt-8 flex rounded-full bg-[#262064]/40 px-2 py-1 shadow-lg border border-[#2a2033]/80">
+      <input
+        class="flex-1 bg-transparent text-gray-200 px-4 py-2 focus:outline-none text-base placeholder:text-gray-400/70"
+        placeholder="Enter your prompt..."
+      />
+      <button class="bg-gradient-to-r from-[#4339a7] to-[#24a2f7] px-5 py-2 ml-2 rounded-full text-white font-bold whitespace-nowrap text-sm">
+        Try it now
+      </button>
+    </div>
+    <!-- Banner image -->
+    <img
+      src="https://bucket.mlcdn.com/a/3336/3336910/images/bc2f75e5ed70db69e6fe87f3623866e549ab7088.png"
+      alt="Hero banner"
+      class="w-full max-w-5xl h-auto object-cover rounded-2xl mt-10 shadow-xl border border-[#4339a7]/20"
+      style="min-height: 210px; background: #181827;"
+    />
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="w-full flex flex-col items-center px-2 pb-24 -mt-6">
+    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-center text-white mb-10">
+      <span class="bg-gradient-to-r from-[#4339a7] to-[#24a2f7] text-transparent bg-clip-text">
+        Simple, transparent pricing
+      </span>
+    </h2>
+    <div class="flex flex-col md:flex-row gap-8 xl:gap-12 justify-center items-center w-full max-w-5xl">
+      <!-- FREE CARD -->
+      <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#524d58] to-[#4339a7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Free</div>
+        <div class="min-h-[56px]"></div>
+        <ul class="text-zinc-200 text-sm font-medium space-y-1 mb-8 mt-2 text-center">
+          <li>100 Credits</li>
+          <li>Short Video</li>
+          <li>Medium Video</li>
+          <li>20 AI-generated images</li>
+          <li>Text Generation unlimited</li>
+          <li>AI Voice: 1 minute</li>
+        </ul>
+        <span class="text-2xl font-bold text-white mb-4">$0</span>
+        <button class="px-5 py-2 rounded-full bg-gradient-to-r from-[#4339a7] to-[#24a2f7] text-white font-bold text-sm mt-2">Start Free</button>
+      </div>
+      <!-- WEEKLY CARD -->
+      <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#4339a7] to-[#24a2f7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Weekly</div>
+        <div class="min-h-[56px]"></div>
+        <ul class="text-white text-sm font-medium space-y-1 mb-8 mt-2 text-center">
+          <li>350 Credits</li>
+          <li>Short Video (5 sec): 8 videos</li>
+          <li>Medium Video (10 sec): 4 videos</li>
+          <li>70 AI-generated images</li>
+          <li>Text Generation unlimited</li>
+          <li>AI Voice: 5 minutes 30 s</li>
+        </ul>
+        <span class="text-2xl font-bold text-white mb-4">$5.80 <span class="text-base font-medium">/ week</span></span>
+        <button class="mt-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#4339a7] to-[#24a2f7] text-white font-bold text-sm">Subscribe</button>
+      </div>
+      <!-- MONTHLY CARD -->
+      <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#232030]/95">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#24a2f7] to-[#4339a7] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Monthly</div>
+        <div class="min-h-[56px]"></div>
+        <ul class="text-white text-sm font-medium space-y-1 mb-8 mt-2 text-center">
+          <li>1,500 Credits</li>
+          <li>Short Video (5 sec): 40 videos</li>
+          <li>Medium Video (10 sec): 20 videos</li>
+          <li>300 AI-generated images</li>
+          <li>Text Generation unlimited</li>
+          <li>AI Voice: 25 minutes</li>
+        </ul>
+        <span class="text-2xl font-bold text-white mb-4">$19.90 <span class="text-base font-medium">/ month</span></span>
+        <button class="px-5 py-2 rounded-full bg-gradient-to-r from-[#4339a7] to-[#24a2f7] text-white font-bold text-sm mt-2">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#262064]/80 backdrop-blur-md py-8 mt-auto border-t border-[#4339a7]/30">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      <!-- LEFT: Features/Links -->
+      <div class="flex flex-col gap-2 md:items-start items-center text-zinc-300 text-sm">
+        <span class="font-bold text-white pb-2">Features</span>
+        <a href="/audio" class="hover:text-[#24a2f7]">FX Generation</a>
+        <a href="/audio/text-to-speech" class="hover:text-[#24a2f7]">Text to speech</a>
+        <a href="/audio/voice-changer" class="hover:text-[#24a2f7]">Voice changer</a>
+        <a href="/image/generation" class="hover:text-[#24a2f7]">Text to image</a>
+        <a href="/video" class="hover:text-[#24a2f7]">Text to video</a>
+      </div>
+      <!-- CENTER: Socials & Logo -->
+      <div class="flex flex-col items-center gap-2">
+        <img src="https://ext.same-assets.com/4110646853/2047810549.png" alt="VibeCoding Studio Logo" class="h-8 w-auto mb-1" />
+        <div class="flex gap-6 mt-2">
+          <a href="https://www.facebook.com/share/1Bfh6FhfNQ" target="_blank" rel="noopener noreferrer">
+            <img src="https://ext.same-assets.com/4110646853/4045490586.svg" alt="Facebook" class="h-6 w-6 hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://www.instagram.com/pandorraai" target="_blank" rel="noopener noreferrer">
+            <img src="https://ext.same-assets.com/4110646853/2338479571.svg" alt="Instagram" class="h-6 w-6 hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://www.tiktok.com/@pandorra_ai" target="_blank" rel="noopener noreferrer">
+            <img src="https://ext.same-assets.com/4110646853/4060023943.svg" alt="Tiktok" class="h-6 w-6 hover:scale-110 transition-transform" />
+          </a>
+        </div>
+      </div>
+      <!-- RIGHT: Legal/Company -->
+      <div class="flex flex-col gap-2 md:items-end items-center text-zinc-400 text-sm">
+        <span class="font-bold text-white pb-2">Company</span>
+        <a href="/about" class="hover:text-white">About Us</a>
+        <a href="/pricing" class="hover:text-white">Pricing</a>
+        <a href="/affiliation" class="hover:text-white">Affiliate Program</a>
+        <a href="/privacy" class="hover:text-white">Privacy Policy</a>
+        <a href="/terms" class="hover:text-white">Terms of Service</a>
+      </div>
+    </div>
+    <div class="text-center text-xs text-zinc-500 mt-6">© <script>document.write(new Date().getFullYear())</script> VibeCoding Studio. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // This script is just to make the copyright year dynamic
+    document.addEventListener('DOMContentLoaded', function() {
+      const yearElement = document.querySelector('footer div:last-child');
+      if (yearElement) {
+        yearElement.textContent = `© ${new Date().getFullYear()} VibeCoding Studio. All rights reserved.`;
+      }
+    });
+  </script>
+</body>
+</html>
