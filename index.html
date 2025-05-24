@@ -181,6 +181,8 @@ body {
 
 
 
+  
+
 <!-- NAVBAR (unchanged from your original) -->
 <header class="w-full flex items-center justify-between p-4 px-4 sm:px-8 relative z-50">
   <!-- Logo -->
@@ -195,6 +197,10 @@ body {
       VibeCoding Studio
     </span>
   </span>
+
+
+
+  
 
   <!-- Desktop Nav -->
   <nav class="hidden md:flex gap-5 lg:gap-7 items-center">
@@ -212,13 +218,15 @@ body {
 <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="https://bebellpartners.com/vibecoding">Affiliate</a>
     
 
-<a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/token">Log In</a>
+<a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="https://vibecoding-studio.html-lab.net/login">Log In</a>
 
-
-<button class="ml-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#a0196a] to-[#df1783] text-white font-bold text-xs shadow-lg border-none">
-      Start Coding Right Away!
+  <button class="mobile-menu-cta" onclick="window.location.href='https://vibecoding-studio.html-lab.net/register'">
+     Start Coding Right Away!
     </button>
   </nav>
+
+
+  
 
   <!-- Burger Menu Button (Mobile) -->
   <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-50">
@@ -232,6 +240,8 @@ body {
   
 <!-- Fullscreen Mobile Menu - NEW VERSION -->
 <div id="mobile-menu" class="mobile-menu-container">
+
+  
   <!-- Close Button -->
   <button id="close-menu" class="mobile-menu-close">
     <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -248,16 +258,18 @@ body {
     <a href="#pricing" class="mobile-menu-link">Pricing</a>
     <a href="https://bebellpartners.com/vibecoding" class="mobile-menu-link">Affiliate</a>
 
-    <a href="/token" class="mobile-menu-link">Sign In</a>
+    <a href="https://vibecoding-studio.html-lab.net/login" class="mobile-menu-link">Sign In</a>
 
   </div>
   
 
   <!-- CTA at Bottom -->
-  <button class="mobile-menu-cta">
+  <button class="mobile-menu-cta" onclick="window.location.href='https://vibecoding-studio.html-lab.net/register'">
     Start Coding Right Away!
   </button>
 </div>
+
+  
 
 <script>
   const menu = document.getElementById("mobile-menu");
@@ -287,9 +299,6 @@ body {
 
 
 
-
-
-  
 
   <!-- HERO SECTION -->
   <section class="w-full flex flex-col items-center px-4 gap-6 pt-32 sm:pt-24 pb-8 sm:pb-16">
@@ -495,6 +504,8 @@ body {
               <li><a href="#" class="hover:text-[#df1783] transition-colors duration-200">Features</a></li>
               <li><a href="#" class="hover:text-[#df1783] transition-colors duration-200">Integrations</a></li>
               <li><a href="#" class="hover:text-[#df1783] transition-colors duration-200">Pricing</a></li>
+              <li><a href="https://vibecoding-studio.html-lab.net/login" class="hover:text-[#df1783] transition-colors duration-200">Login Page</a></li>
+
             </ul>
           </div>
 
@@ -540,6 +551,17 @@ body {
         <!-- Footer Bottom -->
 <div class="mt-12 mb-6 border-t border-white/10 pt-16 text-sm text-white flex flex-col md:flex-row justify-between items-center">
 
+  <!-- Payment Icons Banner -->
+  <div class="mb-4 w-[160px]">
+    <img 
+      src="https://bucket.mlcdn.com/a/3336/3336910/images/ba7caa40fbb46e4528aaae8b0128896c5e8ff915.png" 
+      alt="Accepted payment methods" 
+      width="160" 
+      loading="lazy"
+      class="mx-auto"
+    >
+  </div>
+  
 <p class="mb-4 font-semibold text-center bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
   © 2024 VibeCoding Studio • All rights reserved. <br>
   <span class="font-normal text-[14px] text-white">Powered by Html Lab 🚀</span>
@@ -622,6 +644,219 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
+
+
+
+
+  <!-- Widget BACK-TO-TOP -->
+<script>
+// Create Back-to-Top Button Dynamically
+document.addEventListener("DOMContentLoaded", function () {
+    // Create the button container
+    const backToTop = document.createElement("div");
+    backToTop.id = "back-to-top";
+    backToTop.style.position = "fixed";
+    backToTop.style.bottom = "20px";
+    backToTop.style.right = "20px";
+    backToTop.style.display = "none";
+    backToTop.style.cursor = "pointer";
+    backToTop.style.zIndex = "9999";
+
+    // Create the image inside the button
+    const backToTopImg = document.createElement("img");
+    backToTopImg.src = "https://bucket.mlcdn.com/a/3336/3336910/images/9a0ba1ccc4bab1cdd93300918760c0a8c09da18a.png";
+    backToTopImg.alt = "Volver arriba";
+    backToTopImg.style.width = "40px";
+    backToTopImg.style.height = "40px";
+
+    // Append image to the button
+    backToTop.appendChild(backToTopImg);
+
+    // Append button to the body
+    document.body.appendChild(backToTop);
+
+    // Scroll Event Listener
+    window.addEventListener("scroll", function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
+
+    // Click Event for Scrolling to Top
+    backToTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+<!-- End Widget BACK-TO-TOP -->
+
+
+
+
+
+  <!-- APP & FAVOCON ICONS -->
+<script> function removeFromLinks(rel) {
+for (link of document.head.getElementsByTagName("link")) {
+if (link.rel == rel) {
+document.head.removeChild(link);
+}
+};
+}
+function createNewFavicon(rel, img) {
+var newFavicon = document.createElement("link");
+newFavicon.type = "image/png";
+newFavicon.rel = rel;
+newFavicon.href = img;
+var firstHeadElement = document.head.firstChild;
+document.head.insertBefore(newFavicon, firstHeadElement);
+}
+removeFromLinks("icon");
+removeFromLinks("shortcut icon");
+removeFromLinks("apple-touch-icon");
+createNewFavicon("icon", "https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png");
+createNewFavicon("shortcut icon", "https://bucket.mlcdn.com/a/3336/3336910/images/7e5b3a0769320d3bd1c4c15c2ff4129db12218a1.png");
+createNewFavicon("apple-touch-icon", "https://bucket.mlcdn.com/a/3336/3336910/images/7e5b3a0769320d3bd1c4c15c2ff4129db12218a1.png"); 
+</script>
+
+  <!-- APP & FAVICON ICONS -->
+
+
+
+  <!-- ADD CHANGING TEXT NEXT TO FAVICON -->
+<script>
+document.addEventListener('visibilitychange', function() {
+    let originalTitle = document.title;
+    let interval;
+    if (document.hidden) {
+        let messages = ['Vibe...', 'Coding...', 'Studio'];
+        let messageIndex = 0;
+        interval = setInterval(function() {
+            document.title = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }, 500);
+    } else {
+        clearInterval(interval);
+        document.title = originalTitle;
+    }
+});
+</script>
+<!-- ADD CHANGING TEXT NEXT TO FAVICON -->
+
+
+
+
+
+
+  <!-- Page Loading Effect -->
+<style>
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  .bars {
+    width: 50.4px;
+    height: 44.8px;
+    --c: linear-gradient(#df1783 0 0);
+    background: var(--c) 0% 50%,
+               var(--c) 50% 50%,
+               var(--c) 100% 50%;
+    background-size: 10.1px 100%;
+    background-repeat: no-repeat;
+    animation: bars-t0lx83md 3s infinite linear; /* Changed from 3s */
+  }
+
+  @keyframes bars-t0lx83md {
+    33% {
+      background-size: 10.1px 10%, 10.1px 100%, 10.1px 100%;
+    }
+    50% {
+      background-size: 10.1px 100%, 10.1px 10%, 10.1px 100%;
+    }
+    66% {
+      background-size: 10.1px 100%, 10.1px 100%, 10.1px 10%;
+    }
+  }
+
+  .page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bars {
+      animation: none;
+      background-size: 10.1px 100% !important;
+    }
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
+
+<noscript>
+  <style>.page-loader { display: none !important; }</style>
+</noscript>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.setAttribute('aria-busy', 'true');
+    loader.setAttribute('aria-label', 'Loading page');
+    loader.innerHTML = '<div class="bars" role="status"></div>';
+    document.body.prepend(loader);
+    
+    loader.style.display = 'flex';
+    
+    // Changed to 3000ms (3 seconds)
+    const loadTimeout = setTimeout(hideLoader, 3000);
+    
+    window.addEventListener('load', function() {
+      clearTimeout(loadTimeout);
+      hideLoader();
+    });
+    
+    function hideLoader() {
+      loader.setAttribute('aria-busy', 'false');
+      loader.classList.add('hidden');
+      setTimeout(() => {
+        loader.remove();
+        document.body.setAttribute('aria-live', 'polite');
+        const srAlert = document.createElement('span');
+        srAlert.className = 'sr-only';
+        srAlert.textContent = 'Page loading complete';
+        document.body.prepend(srAlert);
+      }, 500);
+    }
+  });
+</script>
+
+  
 
 
 </body>
