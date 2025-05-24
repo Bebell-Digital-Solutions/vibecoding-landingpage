@@ -54,27 +54,48 @@
       <span class="bg-gradient-to-r from-[#a0196a] via-[#f5b1d5] to-[#df1783] text-transparent bg-clip-text">
         VibeCoding Studio
       </span>
-      <span class="text-zinc-200"> at the <br class="hidden md:block" />service of your creativity</span>
+      <span class="text-zinc-200"> <br class="hidden md:block" />Code, Preview, Ship<br>All in One Place 🚀</span>
     </h1>
 
-    
-  <!-- SIGN UP -->
-    <div class="w-full max-w-sm mt-8 flex rounded-full bg-[#DF1783]/20 px-2 py-1 shadow-lg border border-[#DF1783]/40 backdrop-blur-md">
+
+
+<!-- LEAD FORM -->
+<div class="w-full max-w-[334px] mt-8 flex rounded-full bg-[#DF1783]/20 px-2 py-1 shadow-lg border border-[#DF1783]/40 backdrop-blur-md">
   <input
-        class="flex-1 bg-transparent text-gray-200 px-4 py-2 focus:outline-none text-base placeholder:text-gray-400/70"
-        placeholder="Enter your email..."
-      />
-<button class="bg-gradient-to-r from-[#a0196a] to-[#df1783] px-5 py-2 ml-2 rounded-full text-white font-bold whitespace-nowrap text-sm">
-        Try it now
-      </button>
-    </div>
+    id="user-email"
+    class="flex-1 bg-transparent text-gray-200 px-4 py-2 focus:outline-none text-base placeholder:text-gray-400/70"
+    placeholder="Enter your email..."
+    type="email"
+    required
+  />
+  <button
+    onclick="redirectToMailerLite()"
+    class="bg-gradient-to-r from-[#a0196a]/50 to-[#df1783] px-5 py-2 ml-2 rounded-full text-white font-bold whitespace-nowrap text-sm"
+  >
+    Try it now
+  </button>
+</div>
 
+<script>
+  function redirectToMailerLite() {
+    const email = document.getElementById("user-email").value.trim();
 
+    if (!email || !email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
+    const encodedEmail = encodeURIComponent(email);
+    const mailerLiteURL = `https://html-lab.net/vibecoding-studio-signup-form?email=${encodedEmail}`;
 
+    window.location.href = mailerLiteURL;
+  }
+</script>
 
 
     
+
+
 <!-- Arrow Overlay on Right Side -->
 <div class="flex justify-end">
   <img 
@@ -83,16 +104,20 @@
     class="hidden md:block absolute right-[30px] top-[calc(40%-0px)] transform -translate-y-1/2 md:w-[70px] max-w-[220px] w-full h-auto"
   />
 </div>
+
     
-    
-    <!-- Banner image -->
-    <img
-      src="https://bucket.mlcdn.com/a/3336/3336910/images/7ea5438bb67cdb3703a4ed0ee92cc5348b1af64f.png"
-      alt="Hero banner"
-      class="w-full max-w-5xl h-auto object-cover rounded-2xl mt-10 shadow-xl border border-[#a0196a]/20"
-      style="min-height: 210px; background: #181827;"
-    />
-  </section>
+   
+<!-- Banner video -->
+<div class="w-full max-w-5xl rounded-2xl mt-10 shadow-xl border border-[#a0196a]/20 overflow-hidden" style="min-height: 210px; background: #181827;">
+  <iframe
+    class="w-full h-[210px] md:h-[350px] object-cover"
+    src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+    title="Hero banner video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
 
   
 
@@ -105,17 +130,18 @@
 
   
   <!-- PRICING -->
-<section id="pricing" class="w-full flex flex-col items-center px-2 -mt-2 pt-10 pb-24">
-  <h2 class="text-[48px] md:text-[58px] font-bold text-center text-white mb-10">
+<section id="pricing" class="w-full flex flex-col items-center px-2 -mt-2 pt-10 pb-40">
+  <h2 class="text-[45px] md:text-[58px] font-bold text-center text-white mb-20">
     <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
-      Simple, Transparent Pricing
+      Simple & Transparent Pricing Options
     </span>
-  </h2>
+   </h2>
 
 
       
-  <div class="flex flex-col md:flex-row gap-8 xl:gap-12 justify-center items-center w-full max-w-5xl mx-auto">
-      <!-- FREE PLAN -->
+<div class="flex flex-col md:flex-row gap-12 xl:gap-15 justify-center items-center mb-16 md:mb-10 w-full max-w-5xl mx-auto">
+     
+ <!-- FREE PLAN -->
 <div class="relative rounded-3xl px-7 py-10 w-full max-w-xs flex flex-col items-center border border-[#4d4870]/30 shadow-xl bg-gradient-to-b from-[#232030] via-[#2a2033]/95 to-[#DF1783]/30">
   <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] rounded-full px-6 py-2 shadow text-xs font-bold text-white uppercase tracking-widest">Free</div>        <div class="min-h-[56px]"></div>
         <ul class="text-zinc-200 text-sm font-medium space-y-1 mb-8 mt-2 text-center">
@@ -194,7 +220,7 @@
   Vibecoding Studio
 </p>
             </div>
-            <p class="mt-4 font-bold text-white">Powered by Html Lab 🚀</p>
+<p class="mt-4 font-normal text-[12px] text-white"></p>
           </div>
 
 
@@ -251,9 +277,12 @@
 
         
         <!-- Footer Bottom -->
-        <div class="mt-12 border-t border-white/10 pt-6 text-sm text-white flex flex-col md:flex-row justify-between items-center">
-             <p class="mb-4 font-semibold bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
-© 2024 VibeCoding Studio. All rights reserved.</p>
+<div class="mt-12 mb-6 border-t border-white/10 pt-16 text-sm text-white flex flex-col md:flex-row justify-between items-center">
+
+<p class="mb-4 font-semibold text-center bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
+  © 2024 VibeCoding Studio • All rights reserved. <br>
+  <span class="font-normal text-[14px] text-white">Powered by Html Lab 🚀</span>
+</p>
           
           <ul class="flex gap-4 mt-4 md:mt-0">
             <li><a class="hover:text-[#df1783] transition-colors duration-200" href="#">Terms and Conditions</a></li>
@@ -277,3 +306,4 @@
   </script>
 </body>
 </html>
+
