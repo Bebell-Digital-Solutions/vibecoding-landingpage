@@ -162,6 +162,27 @@ body {
   }
 
 
+
+.desktop-cta {
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #a0196a, #df1783);
+  color: white;
+  font-weight: bold;
+  font-size: 14px; /* Slightly smaller than mobile */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+
+
+
+
+    
+
+
   /* Isolated styles for mobile menu to prevent conflicts */
   .mobile-menu-container {
     position: fixed;
@@ -269,12 +290,13 @@ body {
       <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="https://vibecoding-studio.html-lab.net/login">Log In</a>
     </nav>
 
-    <!-- CTA Button (now outside the nav) -->
-    <button class="mobile-menu-cta" onclick="window.location.href='https://vibecoding-studio.html-lab.net/register'">
+   <!-- Updated CTA Button -->
+    <button class="desktop-cta" onclick="window.location.href='https://vibecoding-studio.html-lab.net/register'">
       Start Coding Right Away!
     </button>
   </div>
 
+  
   <!-- Burger Menu Button (Mobile) -->
   <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-50">
     <svg id="menu-icon" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
