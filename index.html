@@ -16,40 +16,169 @@
 
 
 
+
+<style>
+  /* Isolated styles for mobile menu to prevent conflicts */
+  .mobile-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
   
-  <!-- NAVBAR -->
-  <header class="w-full flex items-center justify-between p-4 px-4 sm:px-8">
-    <span class="font-bold text-lg tracking-tight flex items-center gap-2">
-  <img
-    src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png"
-    alt="VibeCoding Studio Logo"
-    class="h-9 w-9"
-    style="filter: drop-shadow(0 2px 8px #4339a7aa)"
-  />
-  <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
-    VibeCoding Studio
+  .mobile-menu-container.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  
+  .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+  
+  .mobile-menu-link {
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .mobile-menu-link:hover {
+    color: #df1783;
+  }
+  
+  .mobile-menu-cta {
+    position: absolute;
+    bottom: 40px;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #a0196a, #df1783);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+</style>
+
+<!-- NAVBAR (unchanged from your original) -->
+<header class="w-full flex items-center justify-between p-4 px-4 sm:px-8 relative z-50">
+  <!-- Logo -->
+  <span class="font-bold text-lg tracking-tight flex items-center gap-2">
+    <img
+      src="https://bucket.mlcdn.com/a/3336/3336910/images/2a926c37fc929607aeed2f835f3a06e0e9f3cff8.png"
+      alt="VibeCoding Studio Logo"
+      class="h-9 w-9"
+      style="filter: drop-shadow(0 2px 8px #4339a7aa)"
+    />
+    <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
+      VibeCoding Studio
+    </span>
   </span>
-</span>
-    
-    <nav class="hidden md:flex gap-5 lg:gap-7 items-center">
-      <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/">Home</a>
-      <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/">About</a>
-      <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="#pricing">Pricing</a>
-      <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/token">Credits</a>
-      <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="https://bebellpartners.com/vibecoding">Affiliate</a>
-<button class="ml-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#a0196a] to-[#df1783] text-white font-bold text-xs shadow-lg border-none">
-        Start Coding Right Away!
-      </button>
-    </nav>
-  </header>
 
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex gap-5 lg:gap-7 items-center">
+    <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/">Home</a>
+    <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/">About</a>
+    <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="#pricing">Pricing</a>
+    <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="/token">Credits</a>
+    <a class="text-gray-300 font-semibold hover:text-[#df1783] transition text-sm duration-200" href="https://bebellpartners.com/vibecoding">Affiliate</a>
+    <button class="ml-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#a0196a] to-[#df1783] text-white font-bold text-xs shadow-lg border-none">
+      Start Coding Right Away!
+    </button>
+  </nav>
 
+  <!-- Burger Menu Button (Mobile) -->
+  <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-50">
+    <svg id="menu-icon" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</header>
+
+<!-- Fullscreen Mobile Menu - NEW VERSION -->
+<div id="mobile-menu" class="mobile-menu-container">
+  <!-- Close Button -->
+  <button id="close-menu" class="mobile-menu-close">
+    <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Nav Links -->
+  <div class="mobile-menu-content">
+    <a href="/" class="mobile-menu-link">Home</a>
+    <a href="/" class="mobile-menu-link">About</a>
+    <a href="#pricing" class="mobile-menu-link">Pricing</a>
+    <a href="/token" class="mobile-menu-link">Credits</a>
+    <a href="https://bebellpartners.com/vibecoding" class="mobile-menu-link">Affiliate</a>
+  </div>
+
+  <!-- CTA at Bottom -->
+  <button class="mobile-menu-cta">
+    Start Coding Right Away!
+  </button>
+</div>
+
+<script>
+  const menu = document.getElementById("mobile-menu");
+  const toggle = document.getElementById("menu-toggle");
+  const close = document.getElementById("close-menu");
+
+  // Toggle menu
+  toggle.addEventListener("click", () => {
+    menu.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+  });
+
+  // Close menu
+  close.addEventListener("click", () => {
+    menu.classList.remove("active");
+    document.body.style.overflow = ""; // Re-enable scrolling
+  });
+
+  // Close when clicking on links
+  document.querySelectorAll(".mobile-menu-link").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+</script>
 
 
   
 
   <!-- HERO SECTION -->
-  <section class="w-full flex flex-col items-center px-4 gap-6 pt-12 sm:pt-24 pb-8 sm:pb-16">
+  <section class="w-full flex flex-col items-center px-4 gap-6 pt-32 sm:pt-24 pb-8 sm:pb-16">
     <h1 class="text-[48px] sm:text-4xl md:text-6xl font-extrabold text-center leading-tight">
       <span class="bg-gradient-to-r from-[#a0196a] via-[#f5b1d5] to-[#df1783] text-transparent bg-clip-text">
         VibeCoding Studio
@@ -107,26 +236,42 @@
 
     
    
-<!-- Banner video -->
+<!-- Banner Container -->
 <div class="w-full max-w-5xl rounded-2xl mt-10 shadow-xl border border-[#a0196a]/20 overflow-hidden" style="min-height: 210px; background: #181827;">
-  <iframe
-    class="w-full aspect-[1.6] max-h-[650px] object-cover rounded-2xl shadow-xl border border-[#a0196a]/20"
-    src="https://www.youtube.com/embed/Bz3sPIzohG8?si=eVlefAlotZaKFb9e"
-    title="Hero banner video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+
+  <!-- Video (hidden on mobile) -->
+  <video
+    class="w-full aspect-[1.6] max-h-[650px] object-cover rounded-2xl shadow-xl border border-[#a0196a]/20 hidden md:block"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="https://cdn.shopify.com/videos/c/o/v/c22c6d8838804b3da03b33fd84a9e284.webm" type="video/webm">
+    <source src="https://cdn.shopify.com/videos/c/o/v/30faff5bfa0a462cb89e838f8d4c9c1b.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Fallback Thumbnail (mobile only) -->
+  <div class="block md:hidden relative cursor-pointer" onclick="openVideoPopup()">
+    <img
+      src="https://bucket.mlcdn.com/a/3336/3336910/images/7ea5438bb67cdb3703a4ed0ee92cc5348b1af64f.png"
+      alt="Video Thumbnail"
+      class="w-full aspect-[1.6] object-cover"
+    />
+
+    <!-- Play Button -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="bg-white/70 hover:bg-white/90 rounded-full p-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#a0196a]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+    </div>
+  </div>
 </div>
 
   
-
-
-
-
-
-
-
 
   
   <!-- PRICING -->
