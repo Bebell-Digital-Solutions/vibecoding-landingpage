@@ -6,8 +6,7 @@
   <title>VibeCoding Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   
-  
-  
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
     
@@ -177,12 +176,6 @@ body {
 }
 
 
-
-
-
-    
-
-
   /* Isolated styles for mobile menu to prevent conflicts */
   .mobile-menu-container {
     position: fixed;
@@ -253,7 +246,11 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-
+@media (max-width: 2802px) {
+  .hide-at-2802 {
+    display: none !important;
+  }
+}
     
     
   </style>
@@ -418,7 +415,7 @@ body {
 
 
 <!-- Arrow Overlay on Right Side (Desktop Only) -->
-<div class="hidden md:block absolute right-[40px] top-[55%] w-[220px] h-auto z-50">
+<div class="hidden md:block absolute right-[40px] top-[55%] w-[250px] h-auto z-50 hide-at-2802">
   <img 
     src="https://bucket.mlcdn.com/a/3336/3336910/images/c6fcebe195ce5911985800b2867ce4ea9d58e1e8.png" 
     alt="Arrow pointing to Demo" 
