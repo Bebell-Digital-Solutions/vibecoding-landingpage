@@ -14,6 +14,71 @@ body {
 
 
 
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  .bars {
+    width: 50.4px;
+    height: 44.8px;
+    --c: linear-gradient(#df1783 0 0);
+    background: var(--c) 0% 50%,
+               var(--c) 50% 50%,
+               var(--c) 100% 50%;
+    background-size: 10.1px 100%;
+    background-repeat: no-repeat;
+    animation: bars-t0lx83md 3s infinite linear; /* Changed from 3s */
+  }
+
+  @keyframes bars-t0lx83md {
+    33% {
+      background-size: 10.1px 10%, 10.1px 100%, 10.1px 100%;
+    }
+    50% {
+      background-size: 10.1px 100%, 10.1px 10%, 10.1px 100%;
+    }
+    66% {
+      background-size: 10.1px 100%, 10.1px 100%, 10.1px 10%;
+    }
+  }
+
+  .page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bars {
+      animation: none;
+      background-size: 10.1px 100% !important;
+    }
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+
+
+
 
  /* Custom cursor styles */
   * {
@@ -753,70 +818,6 @@ document.addEventListener('visibilitychange', function() {
 
 
   <!-- Page Loading Effect -->
-<style>
-  .page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-  }
-
-  .bars {
-    width: 50.4px;
-    height: 44.8px;
-    --c: linear-gradient(#df1783 0 0);
-    background: var(--c) 0% 50%,
-               var(--c) 50% 50%,
-               var(--c) 100% 50%;
-    background-size: 10.1px 100%;
-    background-repeat: no-repeat;
-    animation: bars-t0lx83md 3s infinite linear; /* Changed from 3s */
-  }
-
-  @keyframes bars-t0lx83md {
-    33% {
-      background-size: 10.1px 10%, 10.1px 100%, 10.1px 100%;
-    }
-    50% {
-      background-size: 10.1px 100%, 10.1px 10%, 10.1px 100%;
-    }
-    66% {
-      background-size: 10.1px 100%, 10.1px 100%, 10.1px 10%;
-    }
-  }
-
-  .page-loader.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .bars {
-      animation: none;
-      background-size: 10.1px 100% !important;
-    }
-  }
-  
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-</style>
-
 <noscript>
   <style>.page-loader { display: none !important; }</style>
 </noscript>
