@@ -439,22 +439,24 @@ body {
         </span>
     </h1>
 
-    <!-- LEAD FORM -->
-    <div class="w-full max-w-[334px] mt-8 flex rounded-full bg-[#DF1783]/20 px-2 py-1 shadow-lg border border-[#DF1783]/40 backdrop-blur-md mx-auto">
-        <input
-            id="user-email"
-            class="flex-1 bg-transparent text-gray-200 px-4 py-2 focus:outline-none text-base placeholder:text-gray-400/70"
-            placeholder="Enter your email..."
-            type="email"
-            required
-        />
-        <button
-            onclick="redirectToMailerLite()"
-            class="bg-gradient-to-r from-[#a0196a]/50 to-[#df1783] px-5 py-2 mr-1 rounded-full text-white font-bold whitespace-nowrap text-sm"
-        >
-            Try it now
-        </button>
-    </div>
+<!-- LEAD FORM -->
+<div class="w-full max-w-[334px] mt-8 flex rounded-full bg-[#DF1783]/20 px-2 py-1 shadow-lg border border-[#DF1783]/40 backdrop-blur-md mx-auto overflow-hidden">
+    <input
+        id="user-email"
+        class="flex-1 min-w-0 bg-transparent text-gray-200 px-4 py-2 focus:outline-none text-base placeholder:text-gray-400/70"
+        placeholder="Enter your email..."
+        type="email"
+        required
+    />
+    <button
+        onclick="redirectToMailerLite()"
+        class="shrink-0 bg-gradient-to-r from-[#a0196a]/50 to-[#df1783] px-5 sm:px-4 py-2 rounded-full text-white font-bold whitespace-nowrap text-sm"
+    >
+        Try it now
+    </button>
+</div>
+    
+    
 
     <!-- FOOTNOTE -->
     <p class="text-[12px] sm:text-[14px] md:text-[16px] text-white mt-6 mx-auto">
