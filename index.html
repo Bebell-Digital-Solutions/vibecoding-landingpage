@@ -318,7 +318,20 @@ lord-icon {
 
 
 
-
+ #videoOverlay {
+    transition: opacity 0.3s ease;
+  }
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+  .aspect-w-16 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
 
 
@@ -510,6 +523,9 @@ lord-icon {
 
 
 
+  
+
+
 <!-- About Section -->
 
 <section id="about" class="w-full flex flex-col items-center px-2 pt-10 pb-6">
@@ -525,81 +541,82 @@ lord-icon {
 </div>
 
     
-   
 
 <!-- Glowing Media Container -->
 <div class="relative w-full max-w-5xl rounded-2xl mt-10 mx-auto">
-  
   <!-- Supercharged Glowing Gradient Background -->
-  <div class="absolute inset-0 bg-gradient-to-r from-[#df1783] via-[#df1783] to-[#df1783] blur-2xl opacity-40 rounded-1xl pointer-events-none animate-pulse-slow"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#df1783] via-[#df1783] to-[#df1783] blur-2xl opacity-40 rounded-2xl pointer-events-none animate-pulse-slow"></div>
 
   <!-- Video or Image Box -->
   <div class="w-full rounded-2xl shadow-xl border border-[#a0196a]/20 overflow-hidden relative z-10" style="min-height: 210px; background: #181827;">
-    
     <!-- Video (hidden on mobile) -->
-    <video
-      class="w-full aspect-[1.6] max-h-[650px] object-cover hidden md:block"
-      autoplay
-      muted
-      loop
-      playsinline
-    >
+    <video class="w-full aspect-[1.6] max-h-[650px] object-cover hidden md:block" autoplay muted loop playsinline>
       <source src="https://cdn.shopify.com/videos/c/o/v/04ecb62c1e7f4552b36b6f92afd872d4.webm" type="video/webm">
-      <source src="https://cdn.shopify.com/videos/c/o/v/ec917f3421c84fd0b4effb7e864f0667.mp4" type="video/mp4" />
+      <source src="https://cdn.shopify.com/videos/c/o/v/ec917f3421c84fd0b4effb7e864f0667.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-
-
-    
-    <!-- Glowing Play Button -->
-<div class="absolute inset-0 flex items-center justify-center">
-  <!-- Glow Effect -->
-  <div class="absolute rounded-full w-20 h-20 bg-[#df1783] opacity-50 blur-xl animate-pulse-slow"></div>
-  
-  <!-- Button -->
-  <div class="relative bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-4 shadow-lg shadow-[#df1783]/30 transition-all duration-300 transform hover:scale-105">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8 5v14l11-7z"/>
-    </svg>
-  </div>
-</div>
-
-    
+    <!-- Play Button (for both mobile and desktop) -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="absolute rounded-full w-20 h-20 bg-[#df1783] opacity-50 blur-xl animate-pulse-slow"></div>
+      <button id="playButton" class="relative bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-4 shadow-lg shadow-[#df1783]/30 transition-all duration-300 transform hover:scale-105">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+    </div>
 
     <!-- Fallback Image Thumbnail (mobile only) -->
-    <div class="block md:hidden relative cursor-pointer" onclick="openVideoPopup()">
-      <img
-        src="https://bucket.mlcdn.com/a/3336/3336910/images/7ea5438bb67cdb3703a4ed0ee92cc5348b1af64f.png"
-        alt="Video Thumbnail"
-        class="w-full aspect-[1.6] object-cover"
-      />
-
-      
-     
-<!-- Glowing Play Button -->
-<div class="absolute inset-0 flex items-center justify-center">
-  <!-- Glow Effect -->
-  <div class="absolute rounded-full w-20 h-20 bg-[#df1783] opacity-50 blur-xl animate-pulse-slow"></div>
-  
-  <!-- Button -->
-  <div class="relative bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-4 shadow-lg shadow-[#df1783]/30 transition-all duration-300 transform hover:scale-105">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8 5v14l11-7z"/>
-    </svg>
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7ea5438bb67cdb3703a4ed0ee92cc5348b1af64f.png" 
+         alt="Video Thumbnail" 
+         class="block md:hidden w-full aspect-[1.6] object-cover">
   </div>
 </div>
-</section>
 
+<!-- YouTube Video Popup Overlay -->
+<div id="videoOverlay" class="fixed inset-0 z-[9999] bg-black/90 hidden items-center justify-center">
+  <div class="relative w-full max-w-4xl px-4">
+    <button id="closeVideo" class="absolute -top-10 right-0 text-white hover:text-[#df1783] text-2xl">
+      ✕
+    </button>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe id="youtubeVideo" class="w-full h-full" src="" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
 
+<script>
+  const playButton = document.getElementById('playButton');
+  const videoOverlay = document.getElementById('videoOverlay');
+  const closeVideo = document.getElementById('closeVideo');
+  const youtubeVideo = document.getElementById('youtubeVideo');
+  const videoId = "YOUR_VIDEO_ID"; // Replace with your YouTube video ID
 
+  playButton.addEventListener('click', () => {
+    youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    videoOverlay.classList.remove('hidden');
+    videoOverlay.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  });
 
+  closeVideo.addEventListener('click', () => {
+    youtubeVideo.src = '';
+    videoOverlay.classList.add('hidden');
+    videoOverlay.classList.remove('flex');
+    document.body.style.overflow = '';
+  });
 
-
-
-
-
-
+  videoOverlay.addEventListener('click', (e) => {
+    if (e.target === videoOverlay) {
+      youtubeVideo.src = '';
+      videoOverlay.classList.add('hidden');
+      videoOverlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
 
 
 
@@ -1307,6 +1324,47 @@ document.addEventListener('visibilitychange', function() {
   js.src = 'https://api.helpdesk.icu/widget/d74d96f1-6170-3591-abe8-ceeb3010bef4?r=' + encodeURIComponent(window.location);
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'contactus-jssdk'));</script>
+
+
+
+
+<!-- YOUTUBE VIDEO PLAYER -->
+<script>
+  const playButton = document.getElementById('playButton');
+  const videoOverlay = document.getElementById('videoOverlay');
+  const closeVideo = document.getElementById('closeVideo');
+  const youtubeVideo = document.getElementById('youtubeVideo');
+
+  // Replace with your YouTube video ID
+  const videoId = "YOUR_VIDEO_ID"; 
+
+  playButton.addEventListener('click', () => {
+    youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    videoOverlay.classList.remove('hidden');
+    videoOverlay.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  });
+
+  closeVideo.addEventListener('click', () => {
+    youtubeVideo.src = '';
+    videoOverlay.classList.add('hidden');
+    videoOverlay.classList.remove('flex');
+    document.body.style.overflow = ''; // Re-enable scrolling
+  });
+
+  // Close when clicking outside video
+  videoOverlay.addEventListener('click', (e) => {
+    if (e.target === videoOverlay) {
+      youtubeVideo.src = '';
+      videoOverlay.classList.add('hidden');
+      videoOverlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+<!-- YOUTUBE VIDEO PLAYER -->
+
+  
 
 
 
