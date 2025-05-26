@@ -306,6 +306,23 @@ lord-icon {
 
 
 
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: scale(0.95); }
+    50% { opacity: 0.4; transform: scale(1.05); }
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  
+
+
+
+
+
+
+
+    
     
     
   </style>
@@ -531,14 +548,24 @@ lord-icon {
       <source src="https://cdn.shopify.com/videos/c/o/v/ec917f3421c84fd0b4effb7e864f0667.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-     <!-- Play Button -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="bg-white/70 hover:bg-white/90 rounded-full p-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#a0196a]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
-      </div>
+
+
+
+    
+    <!-- Glowing Play Button -->
+<div class="absolute inset-0 flex items-center justify-center">
+  <!-- Glow Effect -->
+  <div class="absolute rounded-full w-20 h-20 bg-[#df1783] opacity-50 blur-xl animate-pulse-slow"></div>
+  
+  <!-- Button -->
+  <div class="relative bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-4 shadow-lg shadow-[#df1783]/30 transition-all duration-300 transform hover:scale-105">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </div>
+</div>
+
+    
 
     <!-- Fallback Image Thumbnail (mobile only) -->
     <div class="block md:hidden relative cursor-pointer" onclick="openVideoPopup()">
@@ -547,15 +574,19 @@ lord-icon {
         alt="Video Thumbnail"
         class="w-full aspect-[1.6] object-cover"
       />
+
+      
      
-     <!-- Play Button (Inverted Colors) -->
+<!-- Glowing Play Button -->
 <div class="absolute inset-0 flex items-center justify-center">
-  <div class="bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-3 shadow-lg transition-colors duration-300">
+  <!-- Glow Effect -->
+  <div class="absolute rounded-full w-20 h-20 bg-[#df1783] opacity-50 blur-xl animate-pulse-slow"></div>
+  
+  <!-- Button -->
+  <div class="relative bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-4 shadow-lg shadow-[#df1783]/30 transition-all duration-300 transform hover:scale-105">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8 5v14l11-7z"/> <!-- Play icon path -->
-        </svg>
-      </div>
-    </div>
+      <path d="M8 5v14l11-7z"/>
+    </svg>
   </div>
 </div>
 </section>
