@@ -547,16 +547,15 @@ lord-icon {
         alt="Video Thumbnail"
         class="w-full aspect-[1.6] object-cover"
       />
-      <!-- Play Button -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="bg-white/70 hover:bg-white/90 rounded-full p-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#a0196a]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
+     
+     <!-- Play Button (Inverted Colors) -->
+<div class="absolute inset-0 flex items-center justify-center">
+  <div class="bg-gradient-to-r from-[#a0196a] to-[#df1783] hover:from-[#df1783] hover:to-[#a0196a] rounded-full p-3 shadow-lg transition-colors duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/> <!-- Play icon path -->
+        </svg>
       </div>
     </div>
-
   </div>
 </div>
 </section>
