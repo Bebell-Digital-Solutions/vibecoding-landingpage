@@ -564,23 +564,54 @@ body {
 
 
 
- <!-- SECTION LLM MODELS -->
 
+
+<!-- SECTION LLM MODELS -->
 <section id="features" class="w-full flex flex-col items-center px-6 pt-10 pb-16">
-<p>
-  <h2 class="text-[30px] md:text-[45px] font-bold text-center text-white mb-10 leading-[1.3] mt-[70px]">
-    <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
-      AI Power-Ups:
-    </span>
-    <span class="block">Best LLM Models ✨</span>
-  </h2>
-  
-    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/b92e9e29a35cd96edd3c30b37893a0ce4b070eab.png" 
-         style="display: block; margin: auto; margin-top: 10px; margin-bottom: 40px; width: 1080px; height: auto;" 
-         alt="Centered Image" width="1080">
-</p>
-
+  <div> <!-- Changed from <p> for better HTML semantics -->
+    <h2 class="text-[30px] md:text-[45px] font-bold text-center text-white mb-10 leading-[1.3] mt-[70px]">
+      <span class="bg-gradient-to-r from-[#a0196a] via-[#f68cb8] to-[#df1783] text-transparent bg-clip-text">
+        AI Power-Ups:
+      </span>
+      <span class="block">Best LLM Models ✨</span>
+    </h2>
+    
+    <!-- Mobile Image (WebP + PNG fallback) -->
+    <picture class="md:hidden block">
+      <source 
+        srcset="https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Frequent_Updates_1.webp?v=1748224364"
+        type="image/webp"
+        media="(max-width: 767px)"
+      >
+      <img 
+        src="https://bucket.mlcdn.com/a/3336/3336910/images/bdca00ec2e46d45d4dfd1dac2e60394461202411.png" 
+        class="mx-auto my-[10px] mb-[40px] w-full max-w-[1080px]" 
+        alt="Mobile LLM Models"
+        width="1080"
+        height="auto"
+        loading="lazy"
+      >
+    </picture>
+         
+    <!-- Desktop Image (WebP + PNG fallback) -->
+    <picture class="hidden md:block">
+      <source 
+        srcset="https://cdn.shopify.com/s/files/1/0242/0175/6777/files/Logos_partnership_1.webp?v=1748224865" <!-- Add your desktop WebP URL here -->
+        type="image/webp"
+        media="(min-width: 768px)"
+      >
+      <img 
+        src="https://bucket.mlcdn.com/a/3336/3336910/images/b92e9e29a35cd96edd3c30b37893a0ce4b070eab.png" 
+        class="mx-auto my-[10px] mb-[40px] w-full max-w-[1080px]" 
+        alt="Desktop LLM Models"
+        width="1080"
+        height="auto"
+        loading="lazy"
+      >
+    </picture>
+  </div>
 </section>
+
 
 
 
